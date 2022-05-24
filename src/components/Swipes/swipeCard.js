@@ -1,7 +1,7 @@
 import TinderCard from 'react-tinder-card'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { indexThings } from '../../api/things'
+import { indexThings, voteThing } from '../../api/things'
 
 class SwipeCard extends Component {
   constructor (props) {
@@ -19,33 +19,29 @@ class SwipeCard extends Component {
       )
   }
 
-  onSwipe = (direction) => {
-    console.log('You swiped: ' + direction)
-  }
-
-  onCardLeftScreen = (myIdentifier) => {
-    console.log(myIdentifier + ' left the screen')
+  onSwipe = (direction, id) => {
+    voteThing(id, direction, this.props.user)
+      .then(() => console.log('worked'))
+      .catch((error) => console.log(error))
   }
 
   render () {
     if (this.state.things === null) {
       return 'Loading...'
     }
-    // const things = [{ Name: 'Johnny' }]
-    const cardJSX = this.state.things.map((thing) => (
-      <TinderCard
-        className="tindercard"
+    const cardJSX = this.state.things.filter((thing) =>
+      (!thing.gooders.includes(this.props.user._id) && !thing.baders.includes(this.props.user._id))).map((thing) => {
+      return (<TinderCard
+        className='tindercard'
         key={thing.title}
-        onSwipe={this.onSwipe}
-        onCardLeftScreen={() => this.onCardLeftScreen(thing.title)}
+        onSwipe={(direction) => this.onSwipe(direction, thing._id)}
         preventSwipe={['up', 'down']}>
         <div className='carddiv'>
-          <img src='https://www.mastercard.us/content/dam/public/mastercardcom/na/us/en/consumers/find-a-card/other/card-image-standard-credit-card.png' />
-          <h1 className="centered">{thing.title}</h1>
+          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_card.svg/788px-White_card.svg.png' />
+          <h1 className='centered'>{thing.title}</h1>
         </div>
-      </TinderCard>
-    ))
-
+      </TinderCard>)
+    })
     return (
       <div>
         {cardJSX}
