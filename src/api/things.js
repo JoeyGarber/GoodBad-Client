@@ -33,3 +33,17 @@ export const voteThing = (id, direction, user) => {
     }
   })
 }
+
+export const voteUser = (id, direction, user) => {
+  return axios({
+    method: 'PATCH',
+    url: apiUrl + '/users/',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    },
+    data: {
+      vote: direction,
+      id: id
+    }
+  })
+}

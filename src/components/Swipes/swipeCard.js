@@ -1,7 +1,7 @@
 import TinderCard from 'react-tinder-card'
 import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
-import { indexThings, voteThing } from '../../api/things'
+import { indexThings, voteThing, voteUser } from '../../api/things'
 
 class SwipeCard extends Component {
   constructor (props) {
@@ -21,7 +21,9 @@ class SwipeCard extends Component {
 
   onSwipe = (direction, id) => {
     voteThing(id, direction, this.props.user)
-      .then(() => console.log('worked'))
+      .then(() => console.log('votething worked'))
+      .then(() => voteUser(id, direction, this.props.user))
+      .then(() => console.log('voteuser should have worked'))
       .catch((error) => console.log(error))
   }
 
