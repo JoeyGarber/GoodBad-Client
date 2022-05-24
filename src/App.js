@@ -124,8 +124,8 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             exact
-            path='/'
-            render={() => <SwipeCard />}
+            path='/cards'
+            render={() => <SwipeCard user={user}/>}
           />
         </main>
       </Fragment>
