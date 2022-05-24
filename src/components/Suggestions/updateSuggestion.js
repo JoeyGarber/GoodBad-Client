@@ -2,15 +2,36 @@ import React, { Component } from 'react'
 import { withRouter } from 'react-router-dom'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-import { createSuggestion } from '../../api/suggestions'
+import { showSuggestion, updateSuggestion } from '../../api/suggestions'
 
-class CreateSuggestion extends Component {
+class UpdateSuggestion extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
       title: ''
     }
+  }
+
+  componentDidMount () {
+    const { match, user, msgAlert } = this.props
+
+    showSuggestion(match.params.id, user)
+      .then((res) => this.setState({ title: res.data.suggestion.title }))
+      .then(() => {
+        msgAlert({
+          heading: 'Successfully Showing Suggestion',
+          message: 'WooHoo!',
+          variant: 'success'
+        })
+      })
+      .catch((error) => {
+        msgAlert({
+          heading: 'Show Suggestion Failed',
+          message: 'Error message: ' + error.message,
+          variant: 'danger'
+        })
+      })
   }
 
   handleChange = (event) =>
@@ -21,20 +42,20 @@ class CreateSuggestion extends Component {
   handleSubmit = (event) => {
     event.preventDefault()
 
-    const { user, msgAlert, history } = this.props
+    const { user, msgAlert, match, history } = this.props
 
-    createSuggestion(this.state, user)
-      .then(() => history.push('/suggestions/'))
+    updateSuggestion(match.params.id, this.state, user)
+      .then(() => history.push('/suggestions'))
       .then(() => {
         msgAlert({
-          heading: 'Suggestion created',
-          message: 'Noted!',
+          heading: 'Suggestion updated',
+          message: 'Now it\'s different!',
           variant: 'success'
         })
       })
       .catch((error) => {
         msgAlert({
-          heading: 'Suggestion creation failed',
+          heading: 'Suggestion update failed',
           message: 'Suggestion error: ' + error.message,
           variant: 'danger'
         })
@@ -52,7 +73,7 @@ class CreateSuggestion extends Component {
               type='text'
               name='title'
               value={this.state.title}
-              placeholder='Suggestion'
+              placeholder='Update Suggestion'
               onChange={this.handleChange}
             />
           </Form.Group>
@@ -63,4 +84,4 @@ class CreateSuggestion extends Component {
   }
 }
 
-export default withRouter(CreateSuggestion)
+export default withRouter(UpdateSuggestion)

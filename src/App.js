@@ -13,6 +13,9 @@ import ChangePassword from './components/auth/ChangePassword'
 
 import IndexSuggestions from './components/Suggestions/indexSuggestions'
 import CreateSuggestion from './components/Suggestions/createSuggestion'
+import ShowSuggestion from './components/Suggestions/showSuggestion'
+import UpdateSuggestion from './components/Suggestions/updateSuggestion'
+import SwipeCard from './components/Swipes/swipeCard'
 
 class App extends Component {
   constructor (props) {
@@ -91,17 +94,38 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            exact path='/suggestions'
+            exact
+            path='/suggestions'
             render={() => (
               <IndexSuggestions msgAlert={this.msgAlert} user={user} />
             )}
           />
           <AuthenticatedRoute
             user={user}
-            path='/suggestions/create'
+            exact
+            path='/suggestions-create'
             render={() => (
               <CreateSuggestion msgAlert={this.msgAlert} user={user} />
             )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact path='/suggestions/:id'
+            render={() => (
+              <ShowSuggestion msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/suggestions/:id/update'
+            render={() => <UpdateSuggestion msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/'
+            render={() => <SwipeCard />}
           />
         </main>
       </Fragment>

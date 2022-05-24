@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { indexSuggestions } from '../../api/suggestions'
+import { Link } from 'react-router-dom'
 
 class IndexSuggestions extends Component {
   constructor (props) {
@@ -55,7 +56,9 @@ class IndexSuggestions extends Component {
     } else {
       suggestionsJSX = suggestions.filter((suggestion) => suggestion.title.toLowerCase().indexOf(this.state.inputText) > -1 || this.state.inputText === '').map((suggestion) => {
         return (
-          <p key={this.props._id}>{suggestion.title}</p>
+          <Link to={`/suggestions/${suggestion._id}`} key={suggestion._id}>
+            <p>{suggestion.title}</p>
+          </Link>
         )
       })
     }

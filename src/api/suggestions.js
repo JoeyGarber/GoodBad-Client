@@ -43,7 +43,7 @@ export const updateSuggestion = (id, data, user) => {
     headers: {
       Authorization: `Bearer ${user.token}`
     },
-    // I could also feed in the whole data object, like task: data, but then if I send it a data object with more keys it won't work
+    // I could also feed in the whole data object, like suggestion: data, but then if I send it a data object with more keys it won't work
     // But also I don't know when I would do that anyway
     data: {
       suggestion: {
@@ -53,7 +53,7 @@ export const updateSuggestion = (id, data, user) => {
   })
 }
 
-export const deleteTask = (id, user) => {
+export const deleteSuggestion = (id, user) => {
   return axios({
     method: 'DELETE',
     url: apiUrl + '/suggestions/' + id,
