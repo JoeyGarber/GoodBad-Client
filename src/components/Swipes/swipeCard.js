@@ -17,9 +17,6 @@ class SwipeCard extends Component {
       .then((res) =>
         this.setState({ things: res.data.things })
       )
-      .then(() => {
-        console.log(this.state.things)
-      })
   }
 
   onSwipe = (direction) => {
@@ -37,11 +34,15 @@ class SwipeCard extends Component {
     // const things = [{ Name: 'Johnny' }]
     const cardJSX = this.state.things.map((thing) => (
       <TinderCard
+        className="tindercard"
         key={thing.title}
         onSwipe={this.onSwipe}
         onCardLeftScreen={() => this.onCardLeftScreen(thing.title)}
         preventSwipe={['up', 'down']}>
-        <img src='https://www.mastercard.us/content/dam/public/mastercardcom/na/us/en/consumers/find-a-card/other/card-image-standard-credit-card.png' />
+        <div className='carddiv'>
+          <img src='https://www.mastercard.us/content/dam/public/mastercardcom/na/us/en/consumers/find-a-card/other/card-image-standard-credit-card.png' />
+          <h1 className="centered">{thing.title}</h1>
+        </div>
       </TinderCard>
     ))
 
