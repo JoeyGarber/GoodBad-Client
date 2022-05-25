@@ -129,7 +129,7 @@ class App extends Component {
           <AuthenticatedRoute
             user={user}
             exact
-            path='/cards'
+            path='/'
             render={() => <SwipeCard msgAlert={this.msgAlert} user={user} />}
           />
           <AuthenticatedRoute
