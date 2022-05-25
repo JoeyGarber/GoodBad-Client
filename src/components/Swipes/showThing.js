@@ -48,7 +48,9 @@ class ShowThing extends Component {
         )
       })
       const baderJSX = this.state.thing.baders.map((bader) => {
-        return <p key={bader._id}>{bader.email} badded this thing.</p>
+        return (
+          <p key={bader._id}>{bader.email} badded this thing.</p>
+        )
       })
       return (
         <div>
