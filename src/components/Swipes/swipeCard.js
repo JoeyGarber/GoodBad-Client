@@ -21,9 +21,7 @@ class SwipeCard extends Component {
 
   onSwipe = (direction, id) => {
     voteThing(id, direction, this.props.user)
-      .then(() => console.log('votething worked'))
       .then(() => voteUser(id, direction, this.props.user))
-      .then(() => console.log('voteuser should have worked'))
       .catch((error) => console.log(error))
   }
 

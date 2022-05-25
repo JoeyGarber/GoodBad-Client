@@ -10,6 +10,7 @@ const authenticatedOptions = (
     <NavLink exact to='/suggestions' className='nav-link'>Suggestions</NavLink>
     <NavLink exact to='/suggestions-create' className='nav-link'>Create Suggestion</NavLink>
     <NavLink exact to='/cards' className='nav-link'>Cards</NavLink>
+    <NavLink exact to='/userthings' className='nav-link'>User Things</NavLink>
   </Fragment>
 )
 

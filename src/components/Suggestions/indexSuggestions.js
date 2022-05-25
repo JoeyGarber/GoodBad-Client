@@ -38,12 +38,6 @@ class IndexSuggestions extends Component {
     this.setState({ inputText: lowerCase })
   }
 
-  handleSubmit = (event) => {
-    event.preventDefault()
-    this.setState({ showAll: false, showUnchecked: false, showChecked: false })
-    this.setState({ [event.target.value]: true })
-  }
-
   render () {
     const { suggestions } = this.state
 

@@ -16,6 +16,7 @@ import CreateSuggestion from './components/Suggestions/createSuggestion'
 import ShowSuggestion from './components/Suggestions/showSuggestion'
 import UpdateSuggestion from './components/Suggestions/updateSuggestion'
 import SwipeCard from './components/Swipes/swipeCard'
+import IndexUserThings from './components/Swipes/indexUserThings'
 
 class App extends Component {
   constructor (props) {
@@ -110,7 +111,8 @@ class App extends Component {
           />
           <AuthenticatedRoute
             user={user}
-            exact path='/suggestions/:id'
+            exact
+            path='/suggestions/:id'
             render={() => (
               <ShowSuggestion msgAlert={this.msgAlert} user={user} />
             )}
@@ -119,13 +121,23 @@ class App extends Component {
             user={user}
             exact
             path='/suggestions/:id/update'
-            render={() => <UpdateSuggestion msgAlert={this.msgAlert} user={user} />}
+            render={() => (
+              <UpdateSuggestion msgAlert={this.msgAlert} user={user} />
+            )}
           />
           <AuthenticatedRoute
             user={user}
             exact
             path='/cards'
-            render={() => <SwipeCard user={user}/>}
+            render={() => <SwipeCard msgAlert={this.msgAlert} user={user} />}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/userthings'
+            render={() => (
+              <IndexUserThings msgAlert={this.msgAlert} user={user} />
+            )}
           />
         </main>
       </Fragment>

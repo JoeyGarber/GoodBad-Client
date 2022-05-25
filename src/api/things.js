@@ -11,6 +11,16 @@ export const indexThings = (user) => {
   })
 }
 
+export const indexUserThings = (user) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/user/things/',
+    headers: {
+      Authorization: `Bearer ${user.token}`
+    }
+  })
+}
+
 export const showThing = (id, user) => {
   return axios({
     method: 'GET',
