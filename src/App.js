@@ -17,6 +17,7 @@ import ShowSuggestion from './components/Suggestions/showSuggestion'
 import UpdateSuggestion from './components/Suggestions/updateSuggestion'
 import SwipeCard from './components/Swipes/swipeCard'
 import IndexUserThings from './components/Swipes/indexUserThings'
+import ShowThing from './components/Swipes/showThing'
 
 class App extends Component {
   constructor (props) {
@@ -137,6 +138,14 @@ class App extends Component {
             path='/userthings'
             render={() => (
               <IndexUserThings msgAlert={this.msgAlert} user={user} />
+            )}
+          />
+          <AuthenticatedRoute
+            user={user}
+            exact
+            path='/thingstats/:id'
+            render={() => (
+              <ShowThing msgAlert={this.msgAlert} user={user} />
             )}
           />
         </main>

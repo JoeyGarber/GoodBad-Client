@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { indexUserThings } from '../../api/things'
-import { withRouter } from 'react-router-dom'
+import { withRouter, Link } from 'react-router-dom'
 
 class IndexUserThings extends Component {
   constructor (props) {
@@ -48,7 +48,9 @@ class IndexUserThings extends Component {
       const total = goods + bads
       return (
         <div key={thing._id}>
-          <h3>{thing.title} - User Vote: Good</h3>
+          <Link to={'/thingstats/' + thing._id}>
+            <h3>{thing.title} - User Vote: Good</h3>
+          </Link>
           <p>Total goods: {goods}</p>
           <p>Good percentage: {((goods / total) * 100).toFixed()}%</p>
           <p>Total bads: {bads}</p>
@@ -62,7 +64,9 @@ class IndexUserThings extends Component {
       const total = goods + bads
       return (
         <div key={thing._id}>
-          <h3>{thing.title} - User Vote: Bad</h3>
+          <Link to={'/thingstats/' + thing._id}>
+            <h3>{thing.title} - User Vote: Bad</h3>
+          </Link>
           <p>Total goods: {goods}</p>
           <p>Good percentage: {((goods / total) * 100).toFixed()}%</p>
           <p>Total bads: {bads}</p>
