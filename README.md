@@ -4,9 +4,9 @@ This application allows users to create an account, decide whether various thing
 
 ## Important Links
 
-- [Deployed Client]
+- [Deployed Client](https://joeygarber.github.io/GoodBad-Client/userthings)
 - [Server Repo](https://github.com/JoeyGarber/GoodBad-Server)
-- [Deployed API]
+- [Deployed API](https://vast-reaches-13226.herokuapp.com)
 
 ## Installation instructions
 
