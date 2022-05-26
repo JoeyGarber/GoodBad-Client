@@ -2,6 +2,10 @@
 
 This application allows users to create an account, decide whether various things are good or bad, and see how other users voted as well. Users can also create suggestions about new things they'd like to vote on.
 
+## App Screenshot
+
+[Screenshot](./Screenshot.png)
+
 ## Important Links
 
 - [Deployed Client](https://joeygarber.github.io/GoodBad-Client/userthings)
