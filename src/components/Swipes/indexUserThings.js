@@ -8,7 +8,8 @@ class IndexUserThings extends Component {
 
     this.state = {
       userGoods: [],
-      userBads: []
+      userBads: [],
+      inputText: ''
     }
   }
 
@@ -36,13 +37,18 @@ class IndexUserThings extends Component {
       })
   }
 
+  inputHandler = (event) => {
+    const lowerCase = event.target.value.toLowerCase()
+    this.setState({ inputText: lowerCase })
+  }
+
   render () {
     const { userGoods, userBads } = this.state
 
     if (userGoods === null && userBads === null) {
       return 'Loading...'
     }
-    const userGoodsJSX = userGoods.map((thing) => {
+    const userGoodsJSX = userGoods.filter((good) => good.title.toLowerCase().indexOf(this.state.inputText) > -1 || this.state.inputText === '').map((thing) => {
       const goods = thing.gooders.length
       const bads = thing.baders.length
       const total = goods + bads
@@ -58,7 +64,7 @@ class IndexUserThings extends Component {
         </div>
       )
     })
-    const userBadsJSX = userBads.map((thing) => {
+    const userBadsJSX = userBads.filter((bad) => bad.title.toLowerCase().indexOf(this.state.inputText) > -1 || this.state.inputText === '').map((thing) => {
       const goods = thing.gooders.length
       const bads = thing.baders.length
       const total = goods + bads
@@ -77,6 +83,7 @@ class IndexUserThings extends Component {
 
     return (
       <>
+        <input type="text" onChange={this.inputHandler} />
         {userGoodsJSX}
         {userBadsJSX}
       </>

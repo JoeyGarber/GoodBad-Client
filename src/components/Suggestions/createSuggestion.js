@@ -46,7 +46,7 @@ class CreateSuggestion extends Component {
       <div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId='title'>
-            <Form.Label>Title</Form.Label>
+            <Form.Label>Create Suggestion</Form.Label>
             <Form.Control
               required
               type='text'

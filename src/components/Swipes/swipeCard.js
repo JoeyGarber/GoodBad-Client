@@ -31,21 +31,24 @@ class SwipeCard extends Component {
     }
     const cardJSX = this.state.things.filter((thing) =>
       (!thing.gooders.includes(this.props.user._id) && !thing.baders.includes(this.props.user._id))).map((thing) => {
-      return (<TinderCard
-        className='tindercard'
-        key={thing.title}
-        onSwipe={(direction) => this.onSwipe(direction, thing._id)}
-        preventSwipe={['up', 'down']}>
-        <div className='carddiv'>
-          <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_card.svg/788px-White_card.svg.png' />
-          <h1 className='centered'>{thing.title}</h1>
+      return (
+        <div className='card-container' key={thing.title}>
+          <TinderCard
+            className='tindercard'
+            onSwipe={(direction) => this.onSwipe(direction, thing._id)}
+            preventSwipe={['up', 'down']}>
+            <div className='carddiv'>
+              <img src='https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_card.svg/788px-White_card.svg.png' />
+              <h1 className='centered'>{thing.title}</h1>
+            </div>
+          </TinderCard>
         </div>
-      </TinderCard>)
+      )
     })
     return (
-      <div>
+      <>
         {cardJSX}
-      </div>
+      </>
     )
   }
 }
