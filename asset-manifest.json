@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/GoodBad-Client/static/css/main.ba90c4c3.chunk.css",
-    "main.js": "/GoodBad-Client/static/js/main.5de7113a.chunk.js",
-    "main.js.map": "/GoodBad-Client/static/js/main.5de7113a.chunk.js.map",
+    "main.css": "/GoodBad-Client/static/css/main.b0782c5c.chunk.css",
+    "main.js": "/GoodBad-Client/static/js/main.ae6c6256.chunk.js",
+    "main.js.map": "/GoodBad-Client/static/js/main.ae6c6256.chunk.js.map",
     "runtime-main.js": "/GoodBad-Client/static/js/runtime-main.25bf1ade.js",
     "runtime-main.js.map": "/GoodBad-Client/static/js/runtime-main.25bf1ade.js.map",
     "static/js/2.44379813.chunk.js": "/GoodBad-Client/static/js/2.44379813.chunk.js",
     "static/js/2.44379813.chunk.js.map": "/GoodBad-Client/static/js/2.44379813.chunk.js.map",
     "index.html": "/GoodBad-Client/index.html",
-    "static/css/main.ba90c4c3.chunk.css.map": "/GoodBad-Client/static/css/main.ba90c4c3.chunk.css.map",
+    "static/css/main.b0782c5c.chunk.css.map": "/GoodBad-Client/static/css/main.b0782c5c.chunk.css.map",
     "static/js/2.44379813.chunk.js.LICENSE.txt": "/GoodBad-Client/static/js/2.44379813.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.25bf1ade.js",
     "static/js/2.44379813.chunk.js",
-    "static/css/main.ba90c4c3.chunk.css",
-    "static/js/main.5de7113a.chunk.js"
+    "static/css/main.b0782c5c.chunk.css",
+    "static/js/main.ae6c6256.chunk.js"
   ]
 }
