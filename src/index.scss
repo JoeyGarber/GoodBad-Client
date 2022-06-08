@@ -9,6 +9,27 @@
   height: auto;
 }
 
+.left-side {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
+.right-side {
+  position: absolute;
+  top: 50%;
+  left: 85%;
+  transform: translate(-50%, -50%);
+}
+
+.must-choose {
+  position: absolute;
+  top: 40%;
+  left: 15%;
+  transform: translate(-50%, -50%);
+}
+
 .buttons-bar {
   position: absolute;
   bottom: 0;
