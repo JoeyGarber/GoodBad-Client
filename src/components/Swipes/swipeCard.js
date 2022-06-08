@@ -48,6 +48,11 @@ class SwipeCard extends Component {
     return (
       <>
         {cardJSX}
+        <div className="buttons-bar">
+          <button>Bad</button>
+          <button>Cannot decide?</button>
+          <button>Good</button>
+        </div>
       </>
     )
   }
