@@ -4,6 +4,22 @@
   overflow: hidden;
 }
 
+body {
+  background-color: rgba(255, 88, 100, 1);
+}
+
+.searchbar {
+  margin: 15px 0;
+}
+
+Button {
+  margin-top: 10px;
+}
+
+.navbar-dark {
+  background-color: rgba(66, 66, 66, 1);
+}
+
 #card-img {
   width: 60%;
   height: auto;
@@ -14,6 +30,8 @@
   top: 50%;
   left: 15%;
   transform: translate(-50%, -50%);
+  font-size: 1em;
+  word-wrap: break-word;
 }
 
 .right-side {
@@ -21,6 +39,8 @@
   top: 50%;
   left: 85%;
   transform: translate(-50%, -50%);
+  font-size: 1em;
+  word-wrap: break-word;
 }
 
 .must-choose {
@@ -28,6 +48,8 @@
   top: 40%;
   left: 15%;
   transform: translate(-50%, -50%);
+  font-size: 1em;
+  word-wrap: break-word;
 }
 
 .buttons-bar {

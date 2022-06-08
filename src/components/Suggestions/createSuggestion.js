@@ -46,7 +46,7 @@ class CreateSuggestion extends Component {
       <div>
         <Form onSubmit={this.handleSubmit}>
           <Form.Group controlId='title'>
-            <Form.Label>Create Suggestion</Form.Label>
+            <Form.Label><h3>Create Suggestion</h3></Form.Label>
             <Form.Control
               required
               type='text'
@@ -56,7 +56,7 @@ class CreateSuggestion extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button type='submit'>Submit</Button>
+          <Button variant='light' type='submit'>Submit</Button>
         </Form>
       </div>
     )

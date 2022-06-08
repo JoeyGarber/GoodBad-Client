@@ -66,11 +66,11 @@ class ShowSuggestion extends Component {
         <h4>{title}</h4>
         {user._id === owner && (
           <>
-            <Button
+            <Button variant='light'
               onClick={() => history.push(`/suggestions/${match.params.id}/update`)}>
               Update
             </Button>
-            <Button onClick={this.handleDelete}>
+            <Button variant='light' onClick={this.handleDelete}>
               Delete
             </Button>
           </>

@@ -77,7 +77,7 @@ class UpdateSuggestion extends Component {
               onChange={this.handleChange}
             />
           </Form.Group>
-          <Button type='submit'>Submit</Button>
+          <Button variant='light' type='submit'>Submit</Button>
         </Form>
       </div>
     )

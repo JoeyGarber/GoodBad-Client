@@ -54,7 +54,7 @@ class IndexUserThings extends Component {
       const total = goods + bads
       return (
         <div key={thing._id}>
-          <Link to={'/thingstats/' + thing._id}>
+          <Link style={{ textDecoration: 'none', color: 'white' }} to={'/thingstats/' + thing._id}>
             <h3>{thing.title} - User Vote: Good</h3>
           </Link>
           <p>Total goods: {goods}</p>
@@ -70,7 +70,7 @@ class IndexUserThings extends Component {
       const total = goods + bads
       return (
         <div key={thing._id}>
-          <Link to={'/thingstats/' + thing._id}>
+          <Link style={{ textDecoration: 'none', color: 'white' }} to={'/thingstats/' + thing._id}>
             <h3>{thing.title} - User Vote: Bad</h3>
           </Link>
           <p>Total goods: {goods}</p>
@@ -83,7 +83,7 @@ class IndexUserThings extends Component {
 
     return (
       <>
-        <input type="text" onChange={this.inputHandler} />
+        <input className='searchbar' type="text" onChange={this.inputHandler} />
         {userGoodsJSX}
         {userBadsJSX}
       </>

@@ -27,7 +27,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg='primary' variant='dark' expand='md'>
+  <Navbar variant='dark' expand='md'>
     <Navbar.Brand>
       <Link to='/' style={{ color: '#FFF', textDecoration: 'none' }}>GoodBad-Client</Link>
     </Navbar.Brand>

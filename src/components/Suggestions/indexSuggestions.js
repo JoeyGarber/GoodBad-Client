@@ -46,11 +46,11 @@ class IndexSuggestions extends Component {
     }
     let suggestionsJSX
     if (suggestions.length === 0) {
-      suggestionsJSX = 'No suggestions. Try adding one'
+      suggestionsJSX = <h5>No suggestions. Try adding one</h5>
     } else {
       suggestionsJSX = suggestions.filter((suggestion) => suggestion.title.toLowerCase().indexOf(this.state.inputText) > -1 || this.state.inputText === '').map((suggestion) => {
         return (
-          <Link to={`/suggestions/${suggestion._id}`} key={suggestion._id}>
+          <Link style={{ textDecoration: 'none', color: 'white' }} to={`/suggestions/${suggestion._id}`} key={suggestion._id}>
             <p>{suggestion.title}</p>
           </Link>
         )
@@ -59,7 +59,7 @@ class IndexSuggestions extends Component {
 
     return (
       <div>
-        <input type='text' onChange={this.inputHandler} />
+        <input className='searchbar' type='text' placeholder="search for suggestions" onChange={this.inputHandler} />
         {suggestionsJSX}
       </div>
     )

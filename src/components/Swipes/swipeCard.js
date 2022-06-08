@@ -52,9 +52,9 @@ class SwipeCard extends Component {
             </TinderCard>
           </div>
           <div className='buttons-bar'>
-            <button onClick={() => this.setState({ showLeft: true })}>Bad</button>
-            <button onClick={() => this.setState({ mustChoose: true })}>Can&#8217;t decide?</button>
-            <button onClick={() => this.setState({ showRight: true })}>Good</button>
+            <button variant='light' onClick={() => this.setState({ showLeft: true })}>Bad</button>
+            <button variant='light' onClick={() => this.setState({ mustChoose: true })}>Can&#8217;t decide?</button>
+            <button variant='light' onClick={() => this.setState({ showRight: true })}>Good</button>
           </div>
         </>
       )
